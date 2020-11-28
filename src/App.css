@@ -1,38 +1,104 @@
-.App {
+/* App,js */
+.app {
+  margin-top: -30px;
   text-align: center;
+  background-color: black;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.main-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  flex-flow: wrap;
+}
+
+h1 {
+  padding: 10px 50px;
+  text-align: left;
+  font-size: 42px;
+  font-family: "Helvetica";
+  color: red
+}
+
+/* FilteredList in FilteredList.js */
+
+.cards-container {
+  
+  width: 100%;
+  justify-content: space-between;
+  padding-left: 3vw;
+}
+
+.navigation-bar {
+  color: white;
+  background-color:gray;
+  max-width: 60vw;
+  text-align: left;
+  padding: 1vw;
+  border-radius: 25px;
+}
+
+.card {
+  width: 20vw;
+  margin-bottom: 1vw;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.return-container {
+  display: flex;
+  flex-flow: wrap;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.object-list {
+  border: 3px solid red;
+  float: right; 
+  width: 60vw;
+  display: flex;
+  flex-flow: wrap;
+  margin: 1vw;
+  margin-right: 5vw;
+  padding: 2vw;
+  text-align: left;
+}
+
+a:visited {
+  text-decoration: none;
+  color: black;
+}
+
+a:link {
+  text-decoration: none;
+  color: blue;
+}
+
+.shop-button {
+  background-color: red;
+  color: white;
+  padding: 8px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+
+/* Cart in FilteredList.js */
+
+.shopping-cart-title {
+  font-family: "Helvetica";
+  color: white;
+  font-size: 36px;
+}
+
+.total-cost {
+  font-family: "Helvetica";
+  color: white;
+  size: 24px;
+}
+
+.shopping-cart {
+  background-color: grey;
+  border: 3px solid pink;
+  width: 20vw;
+  max-height: 100%;
 }
