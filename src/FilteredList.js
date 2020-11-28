@@ -3,7 +3,7 @@ import "./App.css";
 import { Nav, Navbar } from "react-bootstrap";
 
 
-// Main class: holds selecter, aggregator, and sorting/filtering
+// Main class: holds selecter and sorting/filtering list
 class FilteredList extends React.Component {
     
     // Constructor and sets state
