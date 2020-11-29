@@ -68,7 +68,7 @@ import tvn11 from './img/tvn11.jpg'
 import tvn12 from './img/tvn12.jpg'
 import tvn13 from './img/tvn13.jpg'
 
-
+// list of kdramas to sort, filter, and add/remove from aggregator
 const productList = [
   {title: "It's Okay to Not be Okay", channel: "tvN", genre: "Romance", rating: "11.0", price: 8.99, img: tvn13},
   {title: "Kkondae Intern", channel: "MBC", genre: "Comedy", rating: "7.1", price: 9.99, img: mbc12},
@@ -135,6 +135,7 @@ const productList = [
   {title: "Iris", channel: "KBS", genre: "Action", rating: "35.5", price: 2.99, img: kbs1}
 ]
 
+// Main function of the App
 function App() {
   return (
     <div className="app">

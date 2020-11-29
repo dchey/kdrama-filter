@@ -29,17 +29,17 @@ h1 {
 
 .navigation-bar {
   color: white;
-  background-color:gray;
+  background-color:dimgray;
   max-width: 60vw;
   text-align: left;
   padding: 1vw;
   border-radius: 25px;
+  font-size: 16px;
 }
 
 .card {
   width: 20vw;
   margin-bottom: 1vw;
-  color: white;
 }
 
 .return-container {
@@ -59,14 +59,14 @@ h1 {
   text-align: left;
 }
 
-a:visited {
+.navBar {
+  color: white;
   text-decoration: none;
-  color: black;
 }
 
-a:link {
+.navBar:hover {
+  color: red;
   text-decoration: none;
-  color: blue;
 }
 
 .shop-button {
@@ -79,6 +79,25 @@ a:link {
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
+}
+
+.shop-button:hover {
+  color: black;
+}
+
+.text {
+  color: white;
+}
+
+.img {
+  border: 3px solid white;
+  border-radius: 25px;
+}
+
+.items-list {
+    margin: 15px;
+    padding: 5px;
+    display:table;
 }
 
 
@@ -97,7 +116,7 @@ a:link {
 }
 
 .shopping-cart {
-  background-color: grey;
+  background-color: dimgray;
   border: 3px solid pink;
   width: 20vw;
   max-height: 100%;

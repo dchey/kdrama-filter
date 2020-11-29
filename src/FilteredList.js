@@ -3,7 +3,7 @@ import "./App.css";
 import { Nav, Navbar } from "react-bootstrap";
 
 
-// Main class: holds selecter and sorting/filtering list
+// Main class of this file: holds selecter and sorting/filtering list
 class FilteredList extends React.Component {
     
     // Constructor and sets state
@@ -107,16 +107,16 @@ class FilteredList extends React.Component {
         const renderItem = (item) => {
             return (
                 <div className="card">
-                    <div key={item.title} className="list-item">
-                    <img className='img' src={item.img} alt="error" />
-                    <div className='prop'><b>Title: </b> {item.title}</div>
-                    <div className='prop'><b>Channel: </b> {item.channel}</div>
-                    <div className='prop'><b>Genre:</b> {item.genre} </div>
-                    <div className='prop'><b>Rating: </b> {item.rating}%</div>
-                    <div className='prop'><b>Price: </b> ${item.price}</div>
-                    <button className='shop-button' onClick={() => this.addToCart(item.title, item.img, item.channel, item.genre, item.rating, item.price)}> Add to Cart</button>
-                </div>
-            </div>);
+                    <div key={item.title} className="items-list">
+                        <img className='img' src={item.img} alt="error" />
+                        <div className='text'><b>Title: </b> {item.title}</div>
+                        <div className='text'><b>Channel: </b> {item.channel}</div>
+                        <div className='text'><b>Genre:</b> {item.genre} </div>
+                        <div className='text'><b>Rating: </b> {item.rating}%</div>
+                        <div className='text'><b>Price: </b> ${item.price}</div>
+                        <button className='shop-button' onClick={() => this.addToCart(item.title, item.img, item.channel, item.genre, item.rating, item.price)}> Add to Cart</button>
+                    </div>
+                </div>);
         }
         
         // return: displays the navigation bar with filtering and sorting buttons, filtered items, and cart status
@@ -127,11 +127,11 @@ class FilteredList extends React.Component {
                     {/* navigation bar for channel filtering buttons */}
                     <Navbar bg="light" expand="sm">
                         <Nav defaultActiveKey="All">
-                        <Nav.Item> Channel: <Nav.Link eventKey="All" onSelect={this.onSelectChannel} role="button">All</Nav.Link> &nbsp;
-                        <Nav.Link eventKey="KBS" onSelect={this.onSelectChannel} role="button">KBS</Nav.Link> &nbsp;
-                        <Nav.Link eventKey="MBC" onSelect={this.onSelectChannel} role="button">MBC</Nav.Link> &nbsp;
-                        <Nav.Link eventKey="SBS" onSelect={this.onSelectChannel} role="button">SBS</Nav.Link> &nbsp;
-                        <Nav.Link eventKey="tvN" onSelect={this.onSelectChannel} role="button">tvN</Nav.Link></Nav.Item>
+                        <Nav.Item> Channel: <Nav.Link className='navBar' eventKey="All" onSelect={this.onSelectChannel} role="button">All</Nav.Link> &nbsp;
+                        <Nav.Link className='navBar' eventKey="KBS" onSelect={this.onSelectChannel} role="button">KBS</Nav.Link> &nbsp;
+                        <Nav.Link className='navBar' eventKey="MBC" onSelect={this.onSelectChannel} role="button">MBC</Nav.Link> &nbsp;
+                        <Nav.Link className='navBar' eventKey="SBS" onSelect={this.onSelectChannel} role="button">SBS</Nav.Link> &nbsp;
+                        <Nav.Link className='navBar' eventKey="tvN" onSelect={this.onSelectChannel} role="button">tvN</Nav.Link></Nav.Item>
                         </Nav>
                     </Navbar>
                     <br/>
@@ -139,16 +139,16 @@ class FilteredList extends React.Component {
                     {/* navigation bar for genre filtering buttons */}
                     <Navbar bg="light" expand="sm">
                         <Nav defaultActiveKey="All">
-                        <Nav.Item> Genre: <Nav.Link eventKey="All" onSelect={this.onSelectGenre} role="button">All</Nav.Link> &nbsp;
-                        <Nav.Link eventKey="Action" onSelect={this.onSelectGenre} role="button">Action</Nav.Link> &nbsp;
-                        <Nav.Link eventKey="Comedy" onSelect={this.onSelectGenre} role="button">Comedy</Nav.Link> &nbsp;
-                        <Nav.Link eventKey="Fantasy" onSelect={this.onSelectGenre} role="button">Fantasy</Nav.Link> &nbsp;
-                        <Nav.Link eventKey="Historical" onSelect={this.onSelectGenre} role="button">Historical</Nav.Link> &nbsp;
-                        <Nav.Link eventKey="Legal" onSelect={this.onSelectGenre} role="button">Legal</Nav.Link> &nbsp;
-                        <Nav.Link eventKey="Melodrama" onSelect={this.onSelectGenre} role="button">Melodrama</Nav.Link> &nbsp;
-                        <Nav.Link eventKey="Medical" onSelect={this.onSelectGenre} role="button">Medical</Nav.Link> &nbsp;
-                        <Nav.Link eventKey="Romance" onSelect={this.onSelectGenre} role="button">Romance</Nav.Link> &nbsp;
-                        <Nav.Link eventKey="School" onSelect={this.onSelectGenre} role="button">School</Nav.Link></Nav.Item>
+                        <Nav.Item> Genre: <Nav.Link className='navBar' eventKey="All" onSelect={this.onSelectGenre} role="button">All</Nav.Link> &nbsp;
+                        <Nav.Link className='navBar' eventKey="Action" onSelect={this.onSelectGenre} role="button">Action</Nav.Link> &nbsp;
+                        <Nav.Link className='navBar' eventKey="Comedy" onSelect={this.onSelectGenre} role="button">Comedy</Nav.Link> &nbsp;
+                        <Nav.Link className='navBar' eventKey="Fantasy" onSelect={this.onSelectGenre} role="button">Fantasy</Nav.Link> &nbsp;
+                        <Nav.Link className='navBar' eventKey="Historical" onSelect={this.onSelectGenre} role="button">Historical</Nav.Link> &nbsp;
+                        <Nav.Link className='navBar' eventKey="Legal" onSelect={this.onSelectGenre} role="button">Legal</Nav.Link> &nbsp;
+                        <Nav.Link className='navBar' eventKey="Melodrama" onSelect={this.onSelectGenre} role="button">Melodrama</Nav.Link> &nbsp;
+                        <Nav.Link className='navBar' eventKey="Medical" onSelect={this.onSelectGenre} role="button">Medical</Nav.Link> &nbsp;
+                        <Nav.Link className='navBar' eventKey="Romance" onSelect={this.onSelectGenre} role="button">Romance</Nav.Link> &nbsp;
+                        <Nav.Link className='navBar' eventKey="School" onSelect={this.onSelectGenre} role="button">School</Nav.Link></Nav.Item>
                         </Nav>
                     </Navbar>
                     <br/>
@@ -156,9 +156,9 @@ class FilteredList extends React.Component {
                     {/* navigation bar for rating sorting buttons */}
                     <Navbar bg="light" expand="sm">
                         <Nav defaultActiveKey="Select">
-                        <Nav.Item>Sort by rating: <Nav.Link eventKey="None" onSelect={this.onSelectSorting} role="button">None</Nav.Link> &nbsp;
-                        <Nav.Link eventKey="Highest" onSelect={this.onSelectSorting} role="button">Highest to Lowest</Nav.Link> &nbsp;
-                        <Nav.Link eventKey="Lowest" onSelect={this.onSelectSorting} role="button">Lowest to Highest</Nav.Link></Nav.Item>
+                        <Nav.Item>Sort by rating: <Nav.Link className='navBar' eventKey="None" onSelect={this.onSelectSorting} role="button">None</Nav.Link> &nbsp;
+                        <Nav.Link className='navBar' eventKey="Highest" onSelect={this.onSelectSorting} role="button">Highest to Lowest</Nav.Link> &nbsp;
+                        <Nav.Link className='navBar' eventKey="Lowest" onSelect={this.onSelectSorting} role="button">Lowest to Highest</Nav.Link></Nav.Item>
                         </Nav>
                     </Navbar>
                 </div>
@@ -184,22 +184,22 @@ class Cart extends React.Component {
 
     // Render: calculates total cost and displays all of the list items in the cart and total cost
     render() {
-        var total = 0
+        var totalPrice = 0
         var renderItems = []
         for (var key in this.props.inCart) {
             const val = this.props.inCart[key]
             if (val != null) {
-                total += (val.price) * (val.count) // totla price = price of each episode * number of episodes
+                totalPrice += (val.price) * (val.count) // total price = price of each episode * number of episodes
                 renderItems.push(
                     <div className="card">
-                        <div key={val.title} className="list-item">
+                        <div key={val.title} className="items-list">
                         <img className='img' src={val.img} alt="error" />
-                        <div className='prop'><b>Title: </b> {val.title}</div>
-                        <div className='prop'><b>Channel: </b> {val.channel}</div>
-                        <div className='prop'><b>Genre:</b> {val.genre} </div>
-                        <div className='prop'><b>Rating: </b> {val.rating}%</div>
-                        <div className='prop'><b>Price: </b> ${val.price}</div>
-                        <div className='prop'><b>Number of Episodes: </b> {val.count}</div>
+                        <div className='text'><b>Title: </b> {val.title}</div>
+                        <div className='text'><b>Channel: </b> {val.channel}</div>
+                        <div className='text'><b>Genre:</b> {val.genre} </div>
+                        <div className='text'><b>Rating: </b> {val.rating}%</div>
+                        <div className='text'><b>Price: </b> ${val.price}</div>
+                        <div className='text'><b>Number of Episodes: </b> {val.count}</div>
                         <button className='shop-button' onClick={() => {this.props.removeFromCart(val.title) }}> Remove From Cart</button>
                     </div>
                 </div>)
@@ -216,7 +216,7 @@ class Cart extends React.Component {
                 <br/>
 
                 <div className="total-cost">
-                    Total Cost of Episodes: ${total.toFixed(2)}
+                    Total Cost of Episodes: ${totalPrice.toFixed(2)}
                 </div>
 
                 <div className="shopping-cart">
