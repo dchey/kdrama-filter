@@ -1,4 +1,8 @@
 /* App,js */
+body {
+  background-color: black;
+}
+
 .app {
   margin-top: -30px;
   text-align: center;

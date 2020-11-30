@@ -65,27 +65,28 @@ class FilteredList extends React.Component {
 
     // Adds to aggregator
     addToCart(title, img, channel, genre, rating, price) {
-        if (this.state.inCart[title] == null) {
-            this.state.inCart[title] = {title: title, img: img, channel: channel, genre: genre, rating: rating, price: price, count: 1}
+        let cart = this.state.inCart;
+        if (cart[title] == null) {
+            cart[title] = {title: title, img: img, channel: channel, genre: genre, rating: rating, price: price, count: 1}
         } else {
-            this.state.inCart[title].count += 1
+            cart[title].count += 1
         }
-        this.setState((state, props) => { return {}; })
+        this.setState ({
+            inCart: cart
+        })
     }
     
     // Removes from aggregator
     removeFromCart(title) {
-        if (this.state.inCart[title].count == 1) {
-            this.setState((state, props) => {
-                state.inCart[title] = null
-                return {
-                    inCart: state.inCart
-                };
-            })
+        let cart = this.state.inCart;
+        if (cart[title].count == 1) {
+            cart[title] = null
         } else {
-            this.state.inCart[title].count -= 1
+            cart[title].count -= 1
         }
-        this.setState((state, props) => { return {}; })
+        this.setState ({
+            inCart: cart
+        })
 
     }
 
